@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>BeatGames - Página Inicial</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>🎮 BeatGames</h1>
+    <nav>
+      {% if session.get('usuario') %}
+        <span>Bem-vindo, {{ session['usuario'] }}!</span>
+        <a href="{{ url_for('logout') }}">Sair</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('cadastro') }}">Cadastrar</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <section>
+    <h2>Jogos em destaque</h2>
+    <div class="jogos-grid">
+      {% for jogo in jogos %}
+        <div class="jogo-card">
+          <img src="{{ jogo.capa }}" alt="Capa do jogo">
+          <h3>{{ jogo.nome }}</h3>
+          <p>{{ jogo.categoria }}</p>
+          <p>⭐ {{ jogo.avaliacao }}</p>
+          <a href="{{ url_for('jogo', jogo_id=jogo.id) }}">Ver mais</a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</body>
+</html>

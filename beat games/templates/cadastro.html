@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar conta - BeatGames</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo">BG</div>
+        <h1>BeatGames</h1>
+      </div>
+      <div class="nav-links">
+        <a class="btn ghost" href="{{ url_for('login') }}">Fazer login</a>
+        <a class="btn" href="{{ url_for('index') }}">Página inicial</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="form-card">
+      <h2>🕹️ Crie sua conta</h2>
+      <p class="small">Registre-se para avaliar jogos, criar listas e ver recomendações.</p>
+      <form method="POST">
+        <div class="form-row">
+          <label for="nome">Nome</label>
+          <input class="input" type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">E-mail</label>
+          <input class="input" type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+
+        <div class="form-row">
+          <label for="senha">Senha</label>
+          <input class="input" type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+        </div>
+
+        <button class="btn" type="submit">Criar conta</button>
+      </form>
+
+      <p class="small" style="margin-top:12px;">
+        Já tem conta? <a href="{{ url_for('login') }}" style="color:var(--accent)">Faça login</a>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 BeatGames — Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>

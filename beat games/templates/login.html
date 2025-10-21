@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - BeatGames</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo">BG</div>
+        <h1>BeatGames</h1>
+      </div>
+      <div class="nav-links">
+        <a class="btn ghost" href="{{ url_for('cadastro') }}">Criar conta</a>
+        <a class="btn" href="{{ url_for('index') }}">Página inicial</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="form-card">
+      <h2>🎮 Entrar no BeatGames</h2>
+      <p class="small">Entre com seu e-mail e senha para acessar o site.</p>
+      <form method="POST">
+        <div class="form-row">
+          <label for="email">E-mail</label>
+          <input class="input" type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+
+        <div class="form-row">
+          <label for="senha">Senha</label>
+          <input class="input" type="password" id="senha" name="senha" placeholder="••••••••" required>
+        </div>
+
+        <button class="btn" type="submit">Entrar</button>
+      </form>
+
+      <p class="small" style="margin-top:12px;">
+        Não tem uma conta? <a href="{{ url_for('cadastro') }}" style="color:var(--accent)">Cadastre-se</a>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 BeatGames — Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
