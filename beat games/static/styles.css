@@ -1,17 +1,11 @@
-/* style.css - BeatGames
-   Inspirado por Letterboxd + HowLongToBeat
-   Coloque em static/style.css
-*/
-
-/* IMPORT DE FONTES (pode remover se preferir não depender de web) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Slab:wght@400;600&display=swap');
 
 :root{
-  --bg: #0f1115;             /* fundo geral (escuro como letterboxd dark) */
-  --card: #0f1720;           /* fundo dos cards */
-  --muted: #9aa4b2;          /* texto secundário */
-  --accent: #1db954;         /* verde destaque */
-  --accent-2: #ffb86b;       /* laranja para badges */
+  --bg: #0f1115;             
+  --card: #0f1720;          
+  --muted: #9aa4b2;         
+  --accent: #1db954;        
+  --accent-2: #ffb86b;       
   --glass: rgba(255,255,255,0.03);
   --glass-2: rgba(255,255,255,0.02);
   --elev: rgba(2,6,23,0.7);
@@ -22,7 +16,7 @@
   --smooth: 200ms cubic-bezier(.2,.9,.3,1);
 }
 
-/* Reset / base */
+
 *{box-sizing:border-box}
 html,body{
   height:100%;
@@ -36,13 +30,13 @@ html,body{
   font-size:16px;
 }
 
-/* Layout container */
+
 .container{
   width: min(1200px, 94%);
   margin: 28px auto;
 }
 
-/* Header similar Letterboxd: compact, left logo, right controls */
+
 header{
   position: sticky;
   top:0;
@@ -123,7 +117,7 @@ header{
 .btn:hover{ transform:translateY(-2px) }
 .nav-links{ display:flex; gap:10px; align-items:center; }
 
-/* Main layout: left column (content) and right column (sidebar) */
+
 .main{
   display:grid;
   grid-template-columns: 1fr 320px;
@@ -131,12 +125,12 @@ header{
   margin-top:20px;
 }
 
-/* Left content area */
+
 .content{
   min-height:60vh;
 }
 
-/* Cards grid like HowLongToBeat */
+
 .jogos-grid{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
@@ -174,7 +168,7 @@ header{
 }
 .jogo-card p{ margin:0; color:var(--muted); font-size:13px; }
 
-/* rating badge */
+
 .rating-pill{
   display:inline-flex;
   align-items:center;
@@ -188,7 +182,7 @@ header{
   border:1px solid rgba(255,255,255,0.03);
 }
 
-/* Sidebar */
+
 .sidebar{
   position:relative;
   top:0;
@@ -205,7 +199,7 @@ header{
   font-size:14px;
 }
 
-/* Ranking list */
+
 .rank-list{ display:flex; flex-direction:column; gap:8px; }
 .rank-item{
   display:flex; gap:10px; align-items:center; padding:8px;
@@ -215,7 +209,7 @@ header{
   font-weight:700; width:28px; text-align:center; color:var(--accent-2);
 }
 
-/* Game detail page */
+
 .game-hero{
   display:flex;
   gap:18px;
@@ -238,7 +232,7 @@ header{
 .game-meta h2{ margin:0; font-size:22px; font-weight:700; }
 .game-meta p.desc{ color:var(--muted); margin:0; font-size:15px; max-width:720px; }
 
-/* Action area (Add to...) */
+
 .action-row{
   display:flex;
   gap:12px;
@@ -268,7 +262,7 @@ header{
 }
 .add-popup a:hover{ background:var(--glass); transform:translateX(4px) }
 
-/* Reviews list (howlongtobeat style rows) */
+
 .reviews{
   display:flex;
   flex-direction:column;
@@ -293,14 +287,14 @@ header{
 .rev-text{ color:var(--muted); font-size:14px; }
 .rev-actions{ display:flex; gap:8px; align-items:center; }
 
-/* Like / Dislike buttons */
+
 .icon-btn{
   display:inline-flex; gap:6px; align-items:center; padding:6px 8px; border-radius:8px;
   background:transparent; border:1px solid rgba(255,255,255,0.03); cursor:pointer;
 }
 .icon-btn .count{ color:var(--muted); font-size:13px; font-weight:700; }
 
-/* Stars component (for rating) */
+
 .stars{
   display:inline-flex;
   gap:4px;
@@ -314,7 +308,7 @@ header{
 }
 .star.filled{ color: #ffcf33; } /* amarillo vivo */
 
-/* Profile page */
+
 .profile-header{
   display:flex; gap:18px; align-items:center; margin-bottom:14px;
 }
@@ -325,11 +319,11 @@ header{
 .profile-meta h3{ margin:0; font-size:20px; }
 .profile-meta p{ margin:0; color:var(--muted); }
 
-/* small utility */
+
 .kv{ display:flex; gap:8px; align-items:center; color:var(--muted); font-size:13px; }
 .badge{ background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:999px; font-weight:700; font-size:13px; }
 
-/* forms (login / cadastro) */
+
 .form-card{
   max-width:480px;
   margin: 18px 0;
@@ -344,10 +338,10 @@ header{
 }
 .small{ font-size:13px; color:var(--muted) }
 
-/* footer */
+
 footer{ text-align:center; color:var(--muted); padding:28px 0; font-size:14px; }
 
-/* Responsividade */
+
 @media (max-width:1000px){
   .main{ grid-template-columns: 1fr; }
   .searchbar{ width:260px; }

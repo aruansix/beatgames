@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 
-app = Flask(__name__)
-app.secret_key = "beatgames_secret_key"
+app = Flask(__BEAT__)
+app.secret_key = "beatgames_3121"
 
 
 usuarios = []
