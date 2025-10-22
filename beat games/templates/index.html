@@ -6,32 +6,50 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
+  
   <header>
-    <h1>🎮 BeatGames</h1>
-    <nav>
-      {% if session.get('usuario') %}
-        <span>Bem-vindo, {{ session['usuario'] }}!</span>
-        <a href="{{ url_for('logout') }}">Sair</a>
-      {% else %}
-        <a href="{{ url_for('login') }}">Login</a>
-        <a href="{{ url_for('cadastro') }}">Cadastrar</a>
-      {% endif %}
-    </nav>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo">BG</div>
+        <h1>BeatGames</h1>
+      </div>
+
+      <nav class="nav-links">
+        {% if session.get('usuario') %}
+          <span>👋 Bem-vindo, <strong>{{ session['usuario'] }}</strong>!</span>
+          <a class="btn ghost" href="{{ url_for('logout') }}">Sair</a>
+        {% else %}
+          <a class="btn ghost" href="{{ url_for('login') }}">Login</a>
+          <a class="btn" href="{{ url_for('cadastro') }}">Cadastrar</a>
+        {% endif %}
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>Jogos em destaque</h2>
+
+  <main class="container" style="margin-top: 80px;">
+    <h2 style="margin-bottom: 20px;">🎮 Jogos em destaque</h2>
+
     <div class="jogos-grid">
       {% for jogo in jogos %}
         <div class="jogo-card">
           <img src="{{ jogo.capa }}" alt="Capa do jogo">
-          <h3>{{ jogo.nome }}</h3>
-          <p>{{ jogo.categoria }}</p>
-          <p>⭐ {{ jogo.avaliacao }}</p>
-          <a href="{{ url_for('jogo', jogo_id=jogo.id) }}">Ver mais</a>
+          <div class="card-body">
+            <h3>{{ jogo.nome }}</h3>
+            <p>{{ jogo.categoria }}</p>
+            <div class="rating-pill">⭐ {{ jogo.avaliacao }}</div>
+            <a class="btn small" href="{{ url_for('jogo', jogo_id=jogo.id) }}">Ver mais</a>
+          </div>
         </div>
       {% endfor %}
     </div>
-  </section>
+  </main>
+
+  
+  <footer>
+    <p>© 2025 BeatGames — Todos os direitos reservados</p>
+  </footer>
+
 </body>
 </html>
